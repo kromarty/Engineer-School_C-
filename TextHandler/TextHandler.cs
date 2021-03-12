@@ -28,10 +28,10 @@ namespace TextHandler
             }
         }            
     
-        public ConcurrentDictionary<string, int> MultiThreadedResult(string text)
+        private ConcurrentDictionary<string, int> MultiThreadedResult(string text)
         {
             string[] words = text.Split(new[] { '-', '.', '?', '!', ')', '(', ',', ':', ' ', '\"', '«', '»' }, StringSplitOptions.RemoveEmptyEntries);
-            foreach(var word in words)
+            foreach (var word in words)
             {
                 Thread thread = new Thread(new ParameterizedThreadStart(AddWord));
                 thread.Start(word);
@@ -39,7 +39,7 @@ namespace TextHandler
             return dict;
         }
 
-        public ConcurrentDictionary<string, int> SingleThreadedResult(string text)
+        private ConcurrentDictionary<string, int> SingleThreadedResult(string text)
         {
             string[] words = text.Split(new[] { '-', '.', '?', '!', ')', '(', ',', ':', ' ', '\"', '«', '»' }, StringSplitOptions.RemoveEmptyEntries);
             foreach(var word in words)
