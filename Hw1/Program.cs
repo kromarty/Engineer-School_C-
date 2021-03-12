@@ -11,8 +11,8 @@ namespace Hw1
     {
         static void Main(string[] args)
         {
-            //try
-            //{
+            try
+            {
                 using (StreamReader sr = new StreamReader("Text.txt"))
                 {
                     string text = sr.ReadToEnd();
@@ -68,12 +68,12 @@ namespace Hw1
                     }
                     Console.WriteLine("Успешное выполнение. Ответ лежит по адресу D:\\Temp");
                 }
-            //}
-            //catch (Exception e)
-            //{
-            //    Console.WriteLine("The file could not be read:");
-            //    Console.WriteLine(e.Message);
-            //}
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine("Нажмите Enter для выхода");
             Console.ReadLine();
         }
