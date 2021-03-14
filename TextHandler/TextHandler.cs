@@ -32,8 +32,8 @@ namespace TextHandler
         {
             const char V = '\n';
             string[] words = text.Split(new[] { '-', '.', '?', '!', ')', '(', ',', ':', ' ', '\"', '«', '»', V }, StringSplitOptions.RemoveEmptyEntries);
-            int counter = words.Length / 4;
-            int cnt = words.Length / 4;
+            int counter = words.Length / 2;
+            int cnt = words.Length / 2;
             var words_group = words.GroupBy(_ => counter++ / cnt).Select(v => v.ToArray()).ToArray();
             foreach (var wrds in words_group)
             {
